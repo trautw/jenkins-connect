@@ -6,6 +6,7 @@ pipeline {
         }
     }
     stages {
+/*
         stage('Example Build') {
             agent { docker 'maven:3-alpine' } 
             steps {
@@ -20,6 +21,8 @@ pipeline {
                 sh 'java -version'
             }
         }
+*/
+
         stage('Test0') {
             steps {
                 sh 'node --version'
@@ -31,7 +34,6 @@ pipeline {
           checkout scm
             }
        }
-*/
        stage('Test'){
             steps {
 
@@ -80,5 +82,7 @@ pipeline {
                      to: 'yyyyy@yyyy.com'
             }
        }
+*/
+       
     }
 }
