@@ -14,7 +14,6 @@ pipeline {
        HOME = '.'
     }
     stages {
-/*
         stage('Example Build') {
             agent { docker 'maven:3-alpine' } 
             steps {
@@ -22,6 +21,7 @@ pipeline {
                 sh 'mvn --version'
             }
         }
+        
         stage('Example Test') {
             agent { docker 'openjdk:8-jre' } 
             steps {
@@ -29,7 +29,6 @@ pipeline {
                 sh 'java -version'
             }
         }
-*/
 
         stage('Test0') {
             steps {
@@ -81,6 +80,7 @@ pipeline {
             }
 
        }
+*/
 
        stage('Cleanup'){
             steps {
@@ -95,9 +95,7 @@ pipeline {
                      subject: 'project build successful',
                      to: 'yyyyy@yyyy.com'
             }
-       }
-*/
-       
+       }       
     }
     post {
       always {
