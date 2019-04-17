@@ -22,7 +22,7 @@ pipeline {
                 echo "${params.Greeting} World!"
             }
         }
-        stage('Example') {
+        stage('Example2') {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
