@@ -5,6 +5,12 @@ pipeline {
             args  '-v /tmp:/tmp'
         }
     }
+    environment {
+        // stupid NPM configstore package!
+        XDG_CONFIG_HOME = '.configstore'
+        // stupid NPM username package!
+        MYUSER = 'dummyuser'
+    }
     stages {
 /*
         stage('Example Build') {
