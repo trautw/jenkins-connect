@@ -34,6 +34,7 @@ pipeline {
           checkout scm
             }
        }
+*/
        stage('Test'){
             steps {
 
@@ -49,6 +50,7 @@ pipeline {
             }
        }
 
+/*
        stage('Build Docker'){
             steps {
 
