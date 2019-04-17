@@ -25,12 +25,13 @@ pipeline {
                 sh 'node --version'
             }
         }
+/*
        stage('Checkout'){
             steps {
           checkout scm
             }
        }
-
+*/
        stage('Test'){
             steps {
 
