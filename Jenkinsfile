@@ -27,11 +27,13 @@ pipeline {
             }
         }
        stage('Checkout'){
-
+            steps {
           checkout scm
+            }
        }
 
        stage('Test'){
+            steps {
 
          env.NODE_ENV = "test"
 
@@ -42,24 +44,30 @@ pipeline {
          sh 'npm install'
          sh 'npm test'
 
+            }
        }
 
        stage('Build Docker'){
+            steps {
 
             sh './dockerBuild.sh'
+            }
        }
 
        stage('Deploy'){
+            steps {
 
          echo 'Push to Repo'
          sh './dockerPushToRepo.sh'
 
          echo 'ssh to web server and tell it to pull new image'
          sh 'ssh deploy@xxxxx.xxxxx.com running/xxxxxxx/dockerRun.sh'
+            }
 
        }
 
        stage('Cleanup'){
+            steps {
 
          echo 'prune and cleanup'
          sh 'npm prune'
@@ -70,6 +78,7 @@ pipeline {
                      replyTo: 'xxxx@yyyy.com',
                      subject: 'project build successful',
                      to: 'yyyyy@yyyy.com'
+            }
        }
     }
 }
