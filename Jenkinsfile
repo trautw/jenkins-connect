@@ -38,7 +38,7 @@ pipeline {
        stage('Test'){
             steps {
 
-         sh 'export NODE_ENV = "test"'
+         sh 'export NODE_ENV="test"'
 
          print "Environment will be : ${env.NODE_ENV}"
 
