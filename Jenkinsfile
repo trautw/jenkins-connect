@@ -34,6 +34,10 @@ pipeline {
         stage('Test0') {
             steps {
                 sh 'node --version'
+                sh 'ls -la'
+                sh 'pwd'
+                sh 'set'
+                sh 'id'
             }
         }
 /*
