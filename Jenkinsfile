@@ -10,6 +10,8 @@ pipeline {
         XDG_CONFIG_HOME = '.configstore'
         // stupid NPM username package!
         MYUSER = 'dummyuser'
+       npm_config_cache = npm-cache
+       HOME = .
     }
     stages {
 /*
