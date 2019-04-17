@@ -1,6 +1,10 @@
 pipeline {
     agent {
-        docker { image 'node:7-alpine' }
+        docker { 
+            image 'node:8' 
+            label 'my-defined-label'
+            args  '-v /tmp:/tmp'
+        }
     }
     stages {
         stage('Test0') {
@@ -8,7 +12,6 @@ pipeline {
                 sh 'node --version'
             }
         }
-        
        stage('Checkout'){
 
           checkout scm
