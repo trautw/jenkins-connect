@@ -13,7 +13,15 @@ pipeline {
        npm_config_cache = 'npm-cache'
        HOME = '.'
     }
+    parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    }
     stages {
+        stage('Example') {
+            steps {
+                echo "${params.Greeting} World!"
+            }
+        }
         stage('Example Build') {
             agent { docker 'maven:3-alpine' } 
             steps {
